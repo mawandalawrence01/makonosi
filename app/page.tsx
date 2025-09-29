@@ -86,7 +86,7 @@ export default function Home() {
             <div className="flex items-center">
               <div className="flex items-center space-x-2 md:space-x-3">
                 <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden bg-white/20 backdrop-blur-sm border border-white/30">
-                  <Image 
+        <Image
                     src="/MAKONOSIBLUEORANGE.png" 
                     alt="Makonosi Logo" 
                     width={48}
@@ -621,7 +621,7 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <Image 
+            <Image
                         src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="Mercedes E-Class" 
                         width={400}
@@ -1172,8 +1172,8 @@ export default function Home() {
             {/* WhatsApp */}
             <a 
               href="https://wa.me/254700043620?text=Hello%20Makonosi%20Junior%20Car%20Hire,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
-              target="_blank" 
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="group bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/10 cursor-pointer block"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 border border-green-400/30">
@@ -1276,28 +1276,28 @@ export default function Home() {
                 </a>
                 <a 
                   href="https://instagram.com/makonosijunior" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                   className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600/40 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 border border-pink-600/30"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297C4.198 14.895 3.708 13.744 3.708 12.447s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297zm7.83-9.781c-.49 0-.98-.49-.98-.98s.49-.98.98-.98.98.49.98.98-.49.98-.98.98zm-1.297 9.781c-1.297 0-2.448-.49-3.323-1.297-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323c-.875.807-2.026 1.297-3.323 1.297z"/>
                   </svg>
-                </a>
-                <a 
+        </a>
+        <a
                   href="https://twitter.com/makonosijunior" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-400/20 hover:bg-blue-400/40 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 border border-blue-400/30"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                   </svg>
-                </a>
-                <a 
+        </a>
+        <a
                   href="https://linkedin.com/company/makonosijunior" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-700/20 hover:bg-blue-700/40 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 border border-blue-700/30"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
