@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus, Users } from 'lucide-react';
+import Image from 'next/image';
+import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus } from 'lucide-react';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -26,9 +27,11 @@ export default function Home() {
             <div className="flex items-center">
               <div className="flex items-center space-x-2 md:space-x-3">
                 <div className="w-8 h-8 md:w-12 md:h-12 rounded-xl flex items-center justify-center shadow-lg overflow-hidden bg-white/20 backdrop-blur-sm border border-white/30">
-                  <img 
+                  <Image 
                     src="/MAKONOSIBLUEORANGE.png" 
                     alt="Makonosi Logo" 
+                    width={48}
+                    height={48}
                     className="w-full h-full object-contain p-1"
                   />
                 </div>
@@ -321,9 +324,11 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="Alfa Romeo C4" 
+                        width={400}
+                        height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -375,9 +380,11 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="Nissan GTR" 
+                        width={400}
+                        height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -429,9 +436,11 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="Toyota Land Cruiser V8" 
+                        width={400}
+                        height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -483,9 +492,11 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="BMW X5" 
+                        width={400}
+                        height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -537,9 +548,11 @@ export default function Home() {
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <img 
+                      <Image 
                         src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                         alt="Mercedes E-Class" 
+                        width={400}
+                        height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -693,7 +706,7 @@ export default function Home() {
                 <div className="relative z-10">
                   <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Our Promise</h4>
                   <p className="text-blue-100 text-sm md:text-base lg:text-lg leading-relaxed">
-                    With Makonosi Junior Car Hire, you don't just travel — you experience Kenya in comfort, 
+                    With Makonosi Junior Car Hire, you don&apos;t just travel — you experience Kenya in comfort, 
                     safety, and dignity, guided by 15+ years of professional chauffeur expertise.
                   </p>
                 </div>
@@ -1091,9 +1104,11 @@ export default function Home() {
               className="group bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/10 cursor-pointer block"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 border border-green-400/30">
-                <img 
+                <Image 
                   src="https://i.pinimg.com/474x/f7/1f/fb/f71ffb7ad7db43ccc7b1466de418f254.jpg" 
                   alt="WhatsApp" 
+                  width={32}
+                  height={32}
                   className="w-8 h-8 rounded-lg object-cover"
                 />
               </div>
@@ -1148,7 +1163,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <div className="bg-white/5 backdrop-blur-lg p-6 rounded-2xl border border-white/10">
               <p className="text-lg text-blue-100 leading-relaxed">
-                ✨ With Makonosi Junior Car Hire, you don't just travel — you experience Kenya in comfort, safety, and dignity, guided by 15+ years of professional chauffeur expertise.
+                ✨ With Makonosi Junior Car Hire, you don&apos;t just travel — you experience Kenya in comfort, safety, and dignity, guided by 15+ years of professional chauffeur expertise.
               </p>
             </div>
           </div>
@@ -1164,7 +1179,7 @@ export default function Home() {
             <div className="lg:col-span-1">
               <div className="flex items-center mb-6">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 mr-3">
-                  <img src="/MAKONOSIBLUEORANGE.png" alt="Makonosi Logo" className="w-full h-full object-contain p-1"/>
+                  <Image src="/MAKONOSIBLUEORANGE.png" alt="Makonosi Logo" width={40} height={40} className="w-full h-full object-contain p-1"/>
                 </div>
                 <h3 className="text-xl font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
                   Makonosi Junior
