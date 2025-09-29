@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus } from 'lucide-react';
 
 export default function Home() {
@@ -291,8 +292,8 @@ export default function Home() {
                   </span>
                 </a>
                 
-                <a 
-                  href="#fleet" 
+                <Link 
+                  href="/vehicles" 
                   className="group relative border-2 border-white/90 text-white px-8 py-4 md:px-10 md:py-5 lg:px-12 lg:py-6 rounded-full font-bold text-base md:text-lg lg:text-xl hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105 backdrop-blur-lg bg-white/10 shadow-xl hover:shadow-white/25 w-full sm:w-auto min-w-[200px]"
                 >
                   <span className="flex items-center justify-center gap-2 md:gap-3">
@@ -301,7 +302,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
-                </a>
+                </Link>
                 </div>
               </div>
               
@@ -691,7 +692,7 @@ export default function Home() {
             transition={{ delay: 2.2, duration: 0.8 }}
           >
             <motion.a 
-              href="#fleet" 
+              href="/vehicles" 
               className="inline-flex items-center bg-gradient-to-r from-blue-600 to-orange-500 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-base md:text-lg shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
