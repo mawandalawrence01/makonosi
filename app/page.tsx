@@ -8,12 +8,70 @@ import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus } fro
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
+      // Set video properties for optimal loading
+      video.preload = 'metadata';
       video.load();
-      video.play().catch(console.error);
+      
+      // Handle video loading events
+      const handleCanPlay = () => {
+        setIsVideoLoaded(true);
+        video.play().then(() => {
+          setIsVideoPlaying(true);
+        }).catch((error) => {
+          console.error('Video play failed:', error);
+          // Fallback: try to play without autoplay
+          video.muted = true;
+          video.play().catch(console.error);
+        });
+      };
+
+      const handleLoadStart = () => {
+        console.log('Video loading started');
+      };
+
+      const handleLoadedData = () => {
+        console.log('Video data loaded');
+      };
+
+      const handleError = (e: Event) => {
+        console.error('Video error:', e);
+        console.error('Video src:', video.src);
+        setVideoError(true);
+        setIsVideoLoaded(true); // Show fallback background
+      };
+
+      const handlePlaying = () => {
+        setIsVideoPlaying(true);
+      };
+
+      const handlePause = () => {
+        setIsVideoPlaying(false);
+      };
+
+      // Add event listeners
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('loadstart', handleLoadStart);
+      video.addEventListener('loadeddata', handleLoadedData);
+      video.addEventListener('error', handleError);
+      video.addEventListener('playing', handlePlaying);
+      video.addEventListener('pause', handlePause);
+
+      // Cleanup
+      return () => {
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('loadstart', handleLoadStart);
+        video.removeEventListener('loadeddata', handleLoadedData);
+        video.removeEventListener('error', handleError);
+        video.removeEventListener('playing', handlePlaying);
+        video.removeEventListener('pause', handlePause);
+      };
     }
   }, []);
 
@@ -136,14 +194,40 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-start overflow-hidden -mt-16 md:-mt-20">
         {/* Video Background */}
         <div className="absolute inset-0 z-0 w-full h-full">
+          {/* Loading State */}
+          {!isVideoLoaded && (
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-900 to-blue-700 flex items-center justify-center z-20">
+              <div className="text-center">
+                <div className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full loading-spinner mx-auto mb-4"></div>
+                <p className="text-white/80 text-lg font-medium">Loading Experience...</p>
+                <p className="text-white/60 text-sm mt-2">Preparing your journey</p>
+              </div>
+            </div>
+          )}
+
+          {/* Error State */}
+          {videoError && (
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-900 to-blue-700 flex items-center justify-center z-20">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🚗</span>
+                </div>
+                <p className="text-white/80 text-lg font-medium">Experience Loading...</p>
+                <p className="text-white/60 text-sm mt-2">Your journey awaits</p>
+              </div>
+            </div>
+          )}
+          
           <video
             ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+            preload="metadata"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 video-fade-in ${
+              isVideoPlaying ? 'opacity-100' : 'opacity-0'
+            }`}
             style={{
               minWidth: '100%',
               minHeight: '100%',
@@ -155,18 +239,6 @@ export default function Home() {
               transform: 'translate(-50%, -50%)',
               zIndex: 1
             }}
-            onError={(e) => {
-              console.error('Video error:', e);
-              console.error('Video src:', videoRef.current?.src);
-            }}
-            onLoadStart={() => console.log('Video loading started')}
-            onCanPlay={() => {
-              console.log('Video can play');
-              if (videoRef.current) {
-                videoRef.current.play().catch(console.error);
-              }
-            }}
-            onLoadedData={() => console.log('Video data loaded')}
           >
             <source src="/Makonosi Junior Car Hire.mp4" type="video/mp4" />
             Your browser does not support the video tag.

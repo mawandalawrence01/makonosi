@@ -30,6 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload video for faster loading */}
+        <link rel="preload" href="/Makonosi Junior Car Hire.mp4" as="video" type="video/mp4" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
