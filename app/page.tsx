@@ -445,7 +445,8 @@ export default function Home() {
                 transition={{ delay: 1, duration: 0.8 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
+                <Link href="/vehicles/1" className="block">
+                  <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
@@ -491,6 +492,7 @@ export default function Home() {
                     </motion.button>
                   </div>
                 </div>
+                </Link>
               </motion.div>
 
               {/* Car Deal 2 - Toyota Land Cruiser TX */}
@@ -501,7 +503,8 @@ export default function Home() {
                 transition={{ delay: 1.2, duration: 0.8 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
+                <Link href="/vehicles/2" className="block">
+                  <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
@@ -547,6 +550,7 @@ export default function Home() {
                     </motion.button>
                   </div>
                 </div>
+                </Link>
               </motion.div>
 
               {/* Car Deal 3 - Toyota Land Cruiser V8 Black */}
@@ -557,7 +561,8 @@ export default function Home() {
                 transition={{ delay: 1.0, duration: 0.8 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
+                <Link href="/vehicles/4" className="block">
+                  <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
@@ -618,6 +623,7 @@ export default function Home() {
                     </motion.button>
                   </div>
                 </div>
+                </Link>
               </motion.div>
 
               {/* Car Deal 4 - Toyota Ractis */}
@@ -628,7 +634,8 @@ export default function Home() {
                 transition={{ delay: 1.4, duration: 0.8 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
+                <Link href="/vehicles/3" className="block">
+                  <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
@@ -674,6 +681,7 @@ export default function Home() {
                     </motion.button>
                   </div>
                 </div>
+                </Link>
               </motion.div>
 
             </div>

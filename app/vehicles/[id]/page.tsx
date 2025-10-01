@@ -149,6 +149,47 @@ const vehicles = [
   },
   {
     id: 4,
+    name: "Toyota Land Cruiser V8 Black",
+    category: "Luxury SUV",
+    type: "luxury",
+    image: "/landcruiser_V8_Black/presentable_toyotav8.jpg",
+    images: [
+      "/landcruiser_V8_Black/presentable_toyotav8.jpg"
+    ],
+    price: 22000,
+    originalPrice: 25000,
+    description: "Sleek black luxury SUV with premium V8 engine. Perfect for business meetings and special occasions. Chauffeured only.",
+    features: ["V8 Engine", "Luxury Interior", "Premium Black Finish", "Chauffeured Service", "Business Ready"],
+    capacity: 7,
+    fuel: "Petrol",
+    transmission: "Automatic",
+    available: true,
+    badge: "LUXURY",
+    badgeColor: "from-purple-600 to-purple-800",
+    selfDrive: false,
+    chauffeured: true,
+    fullDescription: "The Toyota Land Cruiser V8 Black is the epitome of luxury and sophistication. With its sleek black exterior and powerful V8 engine, this vehicle makes a statement wherever it goes. Perfect for business meetings, special occasions, and VIP transportation. Our professional chauffeurs ensure a premium experience with unmatched comfort and style.",
+    specifications: {
+      engine: "5.7L V8",
+      horsepower: "381 HP",
+      acceleration: "0-100 km/h in 7.2s",
+      topSpeed: "200 km/h",
+      fuelConsumption: "14.5L/100km",
+      dimensions: "5.1m x 1.9m x 1.9m"
+    },
+    amenities: [
+      "V8 Engine Power",
+      "Luxury Black Interior",
+      "Premium Black Finish",
+      "Professional Chauffeur",
+      "Premium Audio System",
+      "Climate Control",
+      "Business Class Comfort",
+      "VIP Transportation"
+    ]
+  },
+  {
+    id: 5,
     name: "Toyota Fielder Hybrid",
     category: "Hybrid Sedan",
     type: "hybrid",
