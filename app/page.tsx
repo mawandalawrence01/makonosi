@@ -1041,7 +1041,7 @@ export default function Home() {
                 </p>
                 <ul className="text-sm text-orange-700 space-y-1">
                   <li>• Professional experience (15+ years)</li>
-                  <li>• Local knowledge of Kenya's roads and culture</li>
+                  <li>• Local knowledge of Kenya&apos;s roads and culture</li>
                   <li>• Respect, confidentiality, and courtesy</li>
                 </ul>
               </div>

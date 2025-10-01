@@ -4,103 +4,35 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Car, Users, Fuel, MapPin, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Car, Users, Fuel, MapPin, CheckCircle, ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 // Vehicle data structure (same as vehicles page)
 const vehicles = [
   {
     id: 1,
-    name: "C4 Alfa Romeo",
-    category: "Luxury Sedan",
-    type: "sedan",
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 8500,
-    originalPrice: 12000,
-    description: "Luxury Italian engineering meets modern comfort. Perfect for city drives and special occasions.",
-    features: ["Air Conditioning", "Leather Seats", "Premium Sound", "GPS Navigation"],
-    capacity: 4,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    available: true,
-    badge: "HOT DEAL",
-    badgeColor: "from-orange-500 to-red-500",
-    fullDescription: "The C4 Alfa Romeo represents the perfect blend of Italian luxury and modern technology. With its sleek design and premium interior, this vehicle offers an unparalleled driving experience. Whether you're navigating through city streets or embarking on a special occasion, the C4 Alfa Romeo delivers comfort, style, and performance in equal measure.",
-    specifications: {
-      engine: "2.0L Turbo",
-      horsepower: "280 HP",
-      acceleration: "0-100 km/h in 6.2s",
-      topSpeed: "250 km/h",
-      fuelConsumption: "8.5L/100km",
-      dimensions: "4.7m x 1.8m x 1.4m"
-    },
-    amenities: [
-      "Premium Leather Seats",
-      "Dual Zone Climate Control",
-      "Premium Audio System",
-      "GPS Navigation",
-      "Bluetooth Connectivity",
-      "USB Charging Ports",
-      "Sunroof",
-      "Parking Sensors",
-      "Backup Camera",
-      "Keyless Entry"
-    ]
-  },
-  {
-    id: 2,
-    name: "GTR Nissan",
-    category: "Sports Car",
-    type: "sports",
-    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 25000,
-    originalPrice: 35000,
-    description: "High-performance sports car with legendary speed and precision. For the ultimate driving experience.",
-    features: ["Turbo Engine", "Sport Mode", "Premium Interior", "Advanced Safety"],
-    capacity: 2,
-    fuel: "Petrol",
-    transmission: "Manual",
-    available: true,
-    badge: "PREMIUM",
-    badgeColor: "from-red-500 to-pink-500",
-    fullDescription: "The legendary Nissan GTR is a high-performance sports car that delivers an adrenaline-pumping driving experience. Known for its incredible speed, precision handling, and advanced technology, the GTR is the perfect choice for those seeking the ultimate driving thrill. With its powerful engine and race-inspired design, this vehicle promises an unforgettable journey.",
-    specifications: {
-      engine: "3.8L V6 Twin Turbo",
-      horsepower: "565 HP",
-      acceleration: "0-100 km/h in 2.9s",
-      topSpeed: "315 km/h",
-      fuelConsumption: "12.5L/100km",
-      dimensions: "4.7m x 1.9m x 1.4m"
-    },
-    amenities: [
-      "Recaro Sport Seats",
-      "Advanced Sport Suspension",
-      "Premium Audio System",
-      "Racing Mode Selection",
-      "Launch Control",
-      "Carbon Fiber Interior",
-      "LED Headlights",
-      "Performance Brakes",
-      "Sport Exhaust",
-      "Digital Dashboard"
-    ]
-  },
-  {
-    id: 3,
-    name: "Toyota V8",
-    category: "SUV",
-    type: "suv",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 18000,
-    originalPrice: 22000,
-    description: "Powerful V8 engine with luxury interior. Perfect for long journeys and off-road adventures.",
-    features: ["4WD", "V8 Engine", "Luxury Interior", "Off-road Capable"],
+    name: "Toyota Land Cruiser V8",
+    category: "Premium SUV",
+    type: "luxury",
+    image: "/landcruiser_V8_WHITE/presentable.jpg",
+    images: [
+      "/landcruiser_V8_WHITE/presentable.jpg",
+      "/landcruiser_V8_WHITE/landcruiser_V8_WHITE.jpeg",
+      "/landcruiser_V8_WHITE/landcruiser_V8_WHITE_back.jpeg"
+    ],
+    price: 20000,
+    originalPrice: 25000,
+    description: "Powerful V8 engine with luxury interior. Perfect for long journeys and off-road adventures. Chauffeured only.",
+    features: ["V8 Engine", "Luxury Interior", "4WD System", "Chauffeured Service", "Premium Comfort"],
     capacity: 7,
     fuel: "Petrol",
     transmission: "Automatic",
     available: true,
-    badge: "BEST VALUE",
-    badgeColor: "from-green-500 to-emerald-500",
-    fullDescription: "The Toyota V8 is a powerful and luxurious SUV designed for both comfort and adventure. With its robust V8 engine and advanced 4WD system, this vehicle can handle any terrain while providing a premium driving experience. Perfect for family trips, safari adventures, or long-distance travel, the Toyota V8 combines reliability with luxury.",
+    badge: "PREMIUM",
+    badgeColor: "from-orange-500 to-red-500",
+    selfDrive: false,
+    chauffeured: true,
+    fullDescription: "The Toyota Land Cruiser V8 is the ultimate luxury SUV for discerning travelers. With its powerful V8 engine and premium interior, this vehicle delivers unmatched comfort and performance. Perfect for VIP transportation, safari tours, and long-distance travel. Our professional chauffeurs ensure a safe and luxurious journey through Kenya's diverse landscapes.",
     specifications: {
       engine: "5.7L V8",
       horsepower: "381 HP",
@@ -110,263 +42,41 @@ const vehicles = [
       dimensions: "5.1m x 1.9m x 1.9m"
     },
     amenities: [
-      "Third Row Seating",
-      "4WD System",
+      "V8 Engine Power",
       "Luxury Leather Interior",
+      "4WD System",
+      "Professional Chauffeur",
       "Premium Audio System",
       "Climate Control",
       "Power Windows",
       "Cruise Control",
-      "Towing Package",
-      "Roof Rails",
-      "Advanced Safety Features"
+      "Advanced Safety Features",
+      "Third Row Seating"
     ]
   },
   {
-    id: 4,
-    name: "BMW X5",
-    category: "Luxury SUV",
-    type: "luxury",
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 22000,
-    originalPrice: 28000,
-    description: "Premium SUV with cutting-edge technology and superior comfort for discerning clients.",
-    features: ["iDrive System", "Panoramic Sunroof", "Premium Audio", "Driver Assistance"],
-    capacity: 5,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    available: true,
-    badge: "LUXURY",
-    badgeColor: "from-purple-500 to-indigo-500",
-    fullDescription: "The BMW X5 represents the pinnacle of luxury SUV design and technology. With its sophisticated iDrive system, premium materials, and advanced driver assistance features, this vehicle offers an unparalleled driving experience. Perfect for business executives and luxury travelers who demand the very best in comfort, technology, and performance.",
-    specifications: {
-      engine: "3.0L Twin Turbo",
-      horsepower: "335 HP",
-      acceleration: "0-100 km/h in 5.5s",
-      topSpeed: "250 km/h",
-      fuelConsumption: "9.8L/100km",
-      dimensions: "4.9m x 2.0m x 1.7m"
-    },
-    amenities: [
-      "iDrive 7.0 System",
-      "Panoramic Sunroof",
-      "Harman Kardon Audio",
-      "Wireless Charging",
-      "Gesture Control",
-      "Adaptive Cruise Control",
-      "Lane Keep Assist",
-      "Premium Leather",
-      "Ambient Lighting",
-      "Heated Seats"
-    ]
-  },
-  {
-    id: 5,
-    name: "Mercedes E-Class",
-    category: "Executive Sedan",
-    type: "executive",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 20000,
-    originalPrice: 25000,
-    description: "Executive sedan with refined elegance and advanced safety features for business travel.",
-    features: ["MBUX System", "Executive Seats", "Advanced Safety", "Business Ready"],
-    capacity: 4,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    available: true,
-    badge: "EXECUTIVE",
-    badgeColor: "from-slate-500 to-gray-600",
-    fullDescription: "The Mercedes E-Class is the epitome of executive luxury and sophistication. Designed for business professionals who require comfort, technology, and prestige, this sedan combines elegant design with cutting-edge features. With its advanced MBUX system and comprehensive safety features, the E-Class ensures a productive and secure journey for all business needs.",
-    specifications: {
-      engine: "2.0L Turbo",
-      horsepower: "255 HP",
-      acceleration: "0-100 km/h in 6.2s",
-      topSpeed: "250 km/h",
-      fuelConsumption: "7.8L/100km",
-      dimensions: "4.9m x 1.9m x 1.4m"
-    },
-    amenities: [
-      "MBUX Infotainment",
-      "Executive Rear Seats",
-      "Premium Audio",
-      "Wireless Charging",
-      "Active Safety Features",
-      "Adaptive Suspension",
-      "Keyless Go",
-      "Ambient Lighting",
-      "Heated Seats",
-      "Business Package"
-    ]
-  },
-  {
-    id: 6,
-    name: "Toyota Axio",
-    category: "Economy Sedan",
-    type: "economy",
-    image: "https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 5000,
-    originalPrice: 6000,
-    description: "Reliable and fuel-efficient sedan perfect for daily commutes and city driving.",
-    features: ["Fuel Efficient", "Reliable", "Comfortable", "Easy to Drive"],
-    capacity: 4,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    available: true,
-    badge: "POPULAR",
-    badgeColor: "from-blue-500 to-blue-600",
-    fullDescription: "The Toyota Axio is a reliable and fuel-efficient sedan that's perfect for daily commuting and city driving. Known for its dependability and low maintenance costs, the Axio offers excellent value for money. With its comfortable interior and easy-to-drive nature, it's an ideal choice for budget-conscious travelers who don't want to compromise on quality.",
-    specifications: {
-      engine: "1.5L 4-Cylinder",
-      horsepower: "110 HP",
-      acceleration: "0-100 km/h in 11.5s",
-      topSpeed: "180 km/h",
-      fuelConsumption: "6.2L/100km",
-      dimensions: "4.4m x 1.7m x 1.5m"
-    },
-    amenities: [
-      "Air Conditioning",
-      "Power Steering",
-      "CD Player",
-      "Central Locking",
-      "Power Windows",
-      "Fabric Seats",
-      "Cup Holders",
-      "Storage Compartments",
-      "Basic Audio",
-      "Manual Mirrors"
-    ]
-  },
-  {
-    id: 7,
-    name: "Nissan Note",
-    category: "Compact Hatchback",
-    type: "compact",
-    image: "https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 4500,
-    originalPrice: 5500,
-    description: "Compact and versatile hatchback ideal for urban driving and tight parking spaces.",
-    features: ["Compact Size", "Easy Parking", "Fuel Efficient", "Versatile"],
-    capacity: 5,
-    fuel: "Petrol",
-    transmission: "Manual",
-    available: true,
-    badge: "ECONOMY",
-    badgeColor: "from-green-500 to-green-600",
-    fullDescription: "The Nissan Note is a compact and versatile hatchback designed for urban environments. With its small footprint and excellent maneuverability, it's perfect for navigating through city streets and fitting into tight parking spaces. Despite its compact size, the Note offers surprising interior space and fuel efficiency, making it an excellent choice for city driving.",
-    specifications: {
-      engine: "1.2L 3-Cylinder",
-      horsepower: "80 HP",
-      acceleration: "0-100 km/h in 13.2s",
-      topSpeed: "165 km/h",
-      fuelConsumption: "5.8L/100km",
-      dimensions: "4.1m x 1.7m x 1.5m"
-    },
-    amenities: [
-      "Air Conditioning",
-      "Power Steering",
-      "Radio/CD Player",
-      "Central Locking",
-      "Power Windows",
-      "Fabric Seats",
-      "Cup Holders",
-      "Storage Compartments",
-      "Basic Audio",
-      "Manual Mirrors"
-    ]
-  },
-  {
-    id: 8,
-    name: "X-Trail",
-    category: "Compact SUV",
-    type: "suv",
-    image: "https://images.unsplash.com/photo-15493999019-d8ec4c70a6b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 7500,
-    originalPrice: 9000,
-    description: "Versatile compact SUV with excellent fuel economy and comfortable ride quality.",
-    features: ["All-Wheel Drive", "Spacious Interior", "Advanced Safety", "Fuel Efficient"],
-    capacity: 5,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    available: true,
-    badge: "FAMILY",
-    badgeColor: "from-indigo-500 to-blue-500",
-    fullDescription: "The Nissan X-Trail is a versatile compact SUV that combines the practicality of an SUV with the efficiency of a smaller vehicle. With its spacious interior, advanced safety features, and excellent fuel economy, the X-Trail is perfect for families and travelers who need extra space without sacrificing efficiency. Its all-wheel-drive capability makes it suitable for various road conditions.",
-    specifications: {
-      engine: "2.5L 4-Cylinder",
-      horsepower: "170 HP",
-      acceleration: "0-100 km/h in 9.8s",
-      topSpeed: "190 km/h",
-      fuelConsumption: "8.2L/100km",
-      dimensions: "4.6m x 1.8m x 1.7m"
-    },
-    amenities: [
-      "All-Wheel Drive",
-      "Spacious Interior",
-      "Advanced Safety",
-      "Air Conditioning",
-      "Power Windows",
-      "Central Locking",
-      "Audio System",
-      "Cup Holders",
-      "Storage Compartments",
-      "Roof Rails"
-    ]
-  },
-  {
-    id: 9,
-    name: "RAV4",
-    category: "Compact SUV",
-    type: "suv",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 8000,
-    originalPrice: 9500,
-    description: "Reliable and capable compact SUV perfect for both city and highway driving.",
-    features: ["Toyota Safety Sense", "Hybrid Option", "Spacious Cargo", "Reliable"],
-    capacity: 5,
-    fuel: "Petrol/Hybrid",
-    transmission: "Automatic",
-    available: true,
-    badge: "RELIABLE",
-    badgeColor: "from-orange-500 to-orange-600",
-    fullDescription: "The Toyota RAV4 is a reliable and capable compact SUV that excels in both city and highway driving. Known for its dependability and advanced safety features, the RAV4 offers a comfortable ride with plenty of cargo space. With optional hybrid technology, it provides excellent fuel efficiency while maintaining the versatility that makes it perfect for various driving needs.",
-    specifications: {
-      engine: "2.5L 4-Cylinder Hybrid",
-      horsepower: "219 HP",
-      acceleration: "0-100 km/h in 8.1s",
-      topSpeed: "180 km/h",
-      fuelConsumption: "5.8L/100km",
-      dimensions: "4.6m x 1.8m x 1.7m"
-    },
-    amenities: [
-      "Toyota Safety Sense",
-      "Hybrid Technology",
-      "Spacious Cargo",
-      "Air Conditioning",
-      "Power Windows",
-      "Central Locking",
-      "Audio System",
-      "Cup Holders",
-      "Storage Compartments",
-      "Roof Rails"
-    ]
-  },
-  {
-    id: 10,
-    name: "TX Land Cruiser J150",
+    id: 2,
+    name: "Toyota Land Cruiser TX",
     category: "4x4 SUV",
-    type: "offroad",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    type: "suv",
+    image: "/Toyota_Land_cruiser_TX/presentable.jpg",
+    images: [
+      "/Toyota_Land_cruiser_TX/presentable.jpg",
+      "/Toyota_Land_cruiser_TX/WhatsApp Image 2025-09-29 at 21.11.36 (1).jpeg"
+    ],
     price: 15000,
     originalPrice: 18000,
-    description: "Legendary off-road capability with luxury features. Perfect for safari tours and adventure trips.",
-    features: ["4WD System", "Safari Ready", "Luxury Interior", "Self-drive Available"],
+    description: "Reliable and capable SUV perfect for both city and highway driving. Self-drive or chauffeured available.",
+    features: ["4WD System", "Self-drive Available", "Chauffeured Option", "Safari Ready", "Reliable"],
     capacity: 7,
     fuel: "Petrol",
     transmission: "Automatic",
     available: true,
-    badge: "SAFARI",
-    badgeColor: "from-yellow-500 to-orange-500",
-    fullDescription: "The Toyota Land Cruiser J150 is a legendary 4x4 SUV that combines off-road capability with luxury features. Perfect for safari tours and adventure trips, this vehicle can handle the most challenging terrains while providing comfort for all passengers. With its robust construction and advanced 4WD system, the Land Cruiser J150 is the ultimate choice for exploring Kenya's diverse landscapes.",
+    badge: "BEST VALUE",
+    badgeColor: "from-green-500 to-emerald-500",
+    selfDrive: true,
+    chauffeured: true,
+    fullDescription: "The Toyota Land Cruiser TX offers the perfect balance of capability and versatility. Whether you prefer to drive yourself or be chauffeured, this reliable SUV is ready for any adventure. From city commutes to safari expeditions, the TX delivers consistent performance and comfort. Its 4WD system ensures you can explore Kenya's most challenging terrains with confidence.",
     specifications: {
       engine: "4.6L V8",
       horsepower: "304 HP",
@@ -377,91 +87,111 @@ const vehicles = [
     },
     amenities: [
       "4WD System",
+      "Self-drive Option",
+      "Chauffeured Service",
       "Safari Ready",
-      "Luxury Interior",
       "Third Row Seating",
       "Air Conditioning",
       "Power Windows",
       "Central Locking",
       "Audio System",
-      "Cup Holders",
       "Storage Compartments"
     ]
   },
   {
-    id: 11,
-    name: "14-Seater Bus",
-    category: "Passenger Bus",
-    type: "bus",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 12000,
-    originalPrice: 15000,
-    description: "Comfortable 14-seater bus perfect for group tours and corporate events.",
-    features: ["Air Conditioning", "Comfortable Seats", "Luggage Space", "Professional Driver"],
-    capacity: 14,
-    fuel: "Diesel",
+    id: 3,
+    name: "Toyota Ractis",
+    category: "Compact Hatchback",
+    type: "economy",
+    image: "/Toyota_Ractis/presentable.png",
+    images: [
+      "/Toyota_Ractis/presentable.png",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.28.jpeg",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.29 (1).jpeg",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.29.jpeg",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.30.jpeg",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.31.jpeg",
+      "/Toyota_Ractis/WhatsApp Image 2025-09-30 at 15.25.32.jpeg"
+    ],
+    price: 5000,
+    originalPrice: 6000,
+    description: "Compact and fuel-efficient vehicle perfect for city driving and daily commutes. Great value for money.",
+    features: ["Fuel Efficient", "Compact Size", "Easy Parking", "Reliable", "Economical"],
+    capacity: 5,
+    fuel: "Petrol",
     transmission: "Manual",
     available: true,
-    badge: "GROUP",
-    badgeColor: "from-purple-500 to-purple-600",
-    fullDescription: "Our 14-seater bus is designed for comfortable group transportation, perfect for corporate events, group tours, and family gatherings. With air conditioning, comfortable seating, and ample luggage space, this vehicle ensures a pleasant journey for all passengers. Professional drivers with extensive experience in group transportation guarantee a safe and reliable service.",
+    badge: "ECONOMY",
+    badgeColor: "from-blue-500 to-indigo-500",
+    selfDrive: true,
+    chauffeured: false,
+    fullDescription: "The Toyota Ractis is the perfect choice for budget-conscious travelers who need reliable transportation. This compact hatchback excels in city driving with its fuel-efficient engine and easy maneuverability. Perfect for daily commutes, short trips, and navigating through busy urban areas. Despite its compact size, the Ractis offers surprising interior space and comfort.",
     specifications: {
-      engine: "3.0L Diesel",
-      horsepower: "150 HP",
-      acceleration: "0-100 km/h in 15.2s",
-      topSpeed: "140 km/h",
-      fuelConsumption: "12.5L/100km",
-      dimensions: "6.5m x 2.2m x 2.8m"
+      engine: "1.3L 4-Cylinder",
+      horsepower: "95 HP",
+      acceleration: "0-100 km/h in 12.5s",
+      topSpeed: "170 km/h",
+      fuelConsumption: "6.5L/100km",
+      dimensions: "4.0m x 1.7m x 1.5m"
     },
     amenities: [
+      "Fuel Efficient Engine",
+      "Compact Design",
+      "Easy Parking",
       "Air Conditioning",
-      "Comfortable Seats",
-      "Luggage Space",
-      "Professional Driver",
-      "Audio System",
-      "Cup Holders",
-      "Storage Compartments",
-      "Emergency Exits",
-      "First Aid Kit",
-      "Fire Extinguisher"
+      "Power Steering",
+      "Radio/CD Player",
+      "Central Locking",
+      "Power Windows",
+      "Fabric Seats",
+      "Cup Holders"
     ]
   },
   {
-    id: 12,
-    name: "25-Seater Bus",
-    category: "Large Bus",
-    type: "bus",
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    price: 18000,
-    originalPrice: 22000,
-    description: "Spacious 25-seater bus ideal for large group transportation and events.",
-    features: ["Large Capacity", "Air Conditioning", "Comfortable Seating", "Professional Service"],
-    capacity: 25,
-    fuel: "Diesel",
-    transmission: "Manual",
+    id: 4,
+    name: "Toyota Fielder Hybrid",
+    category: "Hybrid Sedan",
+    type: "hybrid",
+    image: "/Toyota Fielder_Daihatsu/Toyota-Fielder-WXB-Hybrid-1.8-2WD_presentable.jpg",
+    images: [
+      "/Toyota Fielder_Daihatsu/Toyota-Fielder-WXB-Hybrid-1.8-2WD_presentable.jpg",
+      "/Toyota Fielder_Daihatsu/Toyota Fielder_Daihatsu.jpeg",
+      "/Toyota Fielder_Daihatsu/Toyota Fielder_Daihatsu_front.jpeg",
+      "/Toyota Fielder_Daihatsu/Toyota Fielder_Daihatsu_back.jpeg",
+      "/Toyota Fielder_Daihatsu/Toyota Fielder_Daihatsu_back_inside.jpeg"
+    ],
+    price: 7000,
+    originalPrice: 8500,
+    description: "Hybrid technology meets reliability. Perfect for eco-conscious drivers who want fuel efficiency without compromising on comfort.",
+    features: ["Hybrid Engine", "Fuel Efficient", "Eco-Friendly", "Comfortable", "Reliable"],
+    capacity: 5,
+    fuel: "Hybrid",
+    transmission: "Automatic",
     available: true,
-    badge: "LARGE GROUP",
-    badgeColor: "from-blue-500 to-indigo-500",
-    fullDescription: "Our 25-seater bus is perfect for large group transportation, corporate events, and educational tours. With its spacious interior, air conditioning, and comfortable seating, this vehicle can accommodate large groups while ensuring everyone travels in comfort. Professional drivers and comprehensive safety features make this the ideal choice for group transportation needs.",
+    badge: "HYBRID",
+    badgeColor: "from-green-500 to-teal-500",
+    selfDrive: true,
+    chauffeured: true,
+    fullDescription: "The Toyota Fielder Hybrid represents the perfect fusion of eco-friendly technology and reliable performance. This hybrid sedan delivers exceptional fuel efficiency while maintaining the comfort and reliability that Toyota is known for. Perfect for environmentally conscious travelers who want to reduce their carbon footprint without sacrificing comfort or performance.",
     specifications: {
-      engine: "4.0L Diesel",
-      horsepower: "200 HP",
-      acceleration: "0-100 km/h in 18.5s",
-      topSpeed: "120 km/h",
-      fuelConsumption: "15.5L/100km",
-      dimensions: "8.5m x 2.4m x 3.2m"
+      engine: "1.8L Hybrid",
+      horsepower: "122 HP",
+      acceleration: "0-100 km/h in 10.8s",
+      topSpeed: "180 km/h",
+      fuelConsumption: "4.2L/100km",
+      dimensions: "4.6m x 1.7m x 1.5m"
     },
     amenities: [
-      "Large Capacity",
+      "Hybrid Technology",
+      "Fuel Efficient",
+      "Eco-Friendly",
       "Air Conditioning",
-      "Comfortable Seating",
-      "Professional Service",
+      "Power Steering",
       "Audio System",
-      "Cup Holders",
-      "Storage Compartments",
-      "Emergency Exits",
-      "First Aid Kit",
-      "Fire Extinguisher"
+      "Central Locking",
+      "Power Windows",
+      "Fabric Seats",
+      "Cup Holders"
     ]
   }
 ];
@@ -470,6 +200,8 @@ export default function VehicleDetailPage() {
   const params = useParams();
   const vehicleId = parseInt(params.id as string);
   const vehicle = vehicles.find(v => v.id === vehicleId);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   if (!vehicle) {
     return (
@@ -487,6 +219,14 @@ export default function VehicleDetailPage() {
       </div>
     );
   }
+
+  const nextImage = () => {
+    setSelectedImageIndex((prev) => (prev + 1) % vehicle.images.length);
+  };
+
+  const prevImage = () => {
+    setSelectedImageIndex((prev) => (prev - 1 + vehicle.images.length) % vehicle.images.length);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -536,15 +276,16 @@ export default function VehicleDetailPage() {
             transition={{ duration: 0.8 }}
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            {/* Vehicle Image */}
+            {/* Vehicle Image Gallery */}
             <div className="relative">
-              <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
+                   onClick={() => setIsGalleryOpen(true)}>
                 <Image
-                  src={vehicle.image}
+                  src={vehicle.images[selectedImageIndex]}
                   alt={vehicle.name}
                   width={600}
                   height={500}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 
@@ -563,7 +304,61 @@ export default function VehicleDetailPage() {
                     <span className="text-sm font-medium">{vehicle.available ? 'Available' : 'Unavailable'}</span>
                   </div>
                 </div>
+
+                {/* Image Navigation */}
+                {vehicle.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevImage();
+                      }}
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-all duration-300"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage();
+                      }}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-all duration-300"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </>
+                )}
+
+                {/* Image Counter */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
+                  {selectedImageIndex + 1} / {vehicle.images.length}
+                </div>
               </div>
+
+              {/* Thumbnail Gallery */}
+              {vehicle.images.length > 1 && (
+                <div className="flex space-x-2 mt-4 overflow-x-auto pb-2">
+                  {vehicle.images.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                        index === selectedImageIndex 
+                          ? 'border-blue-500 shadow-lg' 
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <Image
+                        src={image}
+                        alt={`${vehicle.name} ${index + 1}`}
+                        width={80}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Vehicle Info */}
@@ -576,6 +371,20 @@ export default function VehicleDetailPage() {
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   {vehicle.fullDescription}
                 </p>
+              </div>
+
+              {/* Service Options */}
+              <div className="flex flex-wrap gap-3 mb-6">
+                {vehicle.selfDrive && (
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Self-Drive Available
+                  </span>
+                )}
+                {vehicle.chauffeured && (
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                    Chauffeured Service
+                  </span>
+                )}
               </div>
 
               {/* Quick Specs */}
@@ -709,15 +518,15 @@ export default function VehicleDetailPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="tel:+254721612348"
+                href="tel:+254700004362"
                 className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Call +254 721 612 348
+                Call +254 700 004 362
               </motion.a>
               <motion.a
-                href="https://wa.me/254700043620"
+                href="https://wa.me/254721612348"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
@@ -730,6 +539,52 @@ export default function VehicleDetailPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Image Gallery Modal */}
+      {isGalleryOpen && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              onClick={() => setIsGalleryOpen(false)}
+              className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-all duration-300"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            
+            <div className="relative">
+              <Image
+                src={vehicle.images[selectedImageIndex]}
+                alt={vehicle.name}
+                width={800}
+                height={600}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              />
+              
+              {vehicle.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+                  >
+                    <ChevronLeft className="w-8 h-8" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300"
+                  >
+                    <ChevronRight className="w-8 h-8" />
+                  </button>
+                </>
+              )}
+            </div>
+            
+            <div className="text-center mt-4 text-white">
+              <p className="text-lg font-medium">{vehicle.name}</p>
+              <p className="text-sm opacity-75">{selectedImageIndex + 1} of {vehicle.images.length}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
