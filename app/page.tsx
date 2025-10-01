@@ -4,14 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus } from 'lucide-react';
+import { Plane, Crown, Building2, Heart, Mountain, Shield, Car, Truck, Bus, Users, Fuel } from 'lucide-react';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [currentScrollIndex, setCurrentScrollIndex] = useState(0);
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -75,6 +78,50 @@ export default function Home() {
       };
     }
   }, []);
+
+  // Auto-scroll functionality for mobile
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const isMobile = window.innerWidth < 768; // md breakpoint
+    if (!isMobile) return;
+
+    // Handle user scroll to pause auto-scroll
+    const handleUserScroll = () => {
+      setIsUserScrolling(true);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsUserScrolling(false);
+      }, 3000); // Resume auto-scroll after 3 seconds of no user interaction
+    };
+
+    let scrollTimeout: NodeJS.Timeout;
+    scrollContainer.addEventListener('scroll', handleUserScroll);
+
+    const autoScrollInterval = setInterval(() => {
+      if (isUserScrolling) return; // Don't auto-scroll if user is scrolling
+      
+      setCurrentScrollIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % 4; // We have 4 cars
+        const cardWidth = 320; // w-80 = 320px
+        const scrollPosition = nextIndex * (cardWidth + 24); // 24px gap
+        
+        scrollContainer.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+        
+        return nextIndex;
+      });
+    }, 4000); // Auto-scroll every 4 seconds
+
+    return () => {
+      clearInterval(autoScrollInterval);
+      clearTimeout(scrollTimeout);
+      scrollContainer.removeEventListener('scroll', handleUserScroll);
+    };
+  }, [isUserScrolling]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -385,7 +432,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4 snap-x snap-mandatory snap-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto scrollbar-hide gap-6 pb-4 snap-x snap-mandatory snap-scroll-container" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               {/* Car Deal 1 - Toyota Land Cruiser V8 */}
               <motion.div 
                 className="flex-shrink-0 w-80 md:w-96 snap-start"
@@ -498,7 +549,78 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Car Deal 3 - Toyota Ractis */}
+              {/* Car Deal 3 - Toyota Land Cruiser V8 Black */}
+              <motion.div 
+                className="flex-shrink-0 w-80 md:w-96 snap-start"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.0, duration: 0.8 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+              >
+                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
+                  <div className="relative">
+                    <div className="w-full h-48 md:h-56 overflow-hidden">
+                      <Image 
+                        src="/landcruiser_V8_Black/presentable_toyotav8.jpg" 
+                        alt="Toyota Land Cruiser V8 Black - Premium SUV" 
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        sizes="(max-width: 768px) 320px, 384px"
+                      />
+                    </div>
+                    {/* Premium Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-gradient-to-r from-purple-600 to-purple-800 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        LUXURY
+                      </span>
+                    </div>
+                    {/* Price Tag */}
+                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-gray-900">KES 22,000</div>
+                        <div className="text-xs text-gray-600">Per day</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      Toyota Land Cruiser V8 Black
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      Sleek black luxury SUV with premium V8 engine. Perfect for business meetings and special occasions. Chauffeured only.
+                    </p>
+                    
+                    {/* Features */}
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center space-x-1">
+                        <Users className="w-4 h-4" />
+                        <span>7 Seater</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Fuel className="w-4 h-4" />
+                        <span>Petrol</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Car className="w-4 h-4" />
+                        <span>Auto</span>
+                      </div>
+                    </div>
+                    
+                    {/* Action Button */}
+                    <motion.button
+                      className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Book This Vehicle
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Car Deal 4 - Toyota Ractis */}
               <motion.div 
                 className="flex-shrink-0 w-80 md:w-96 snap-start"
                 initial={{ opacity: 0, x: -50 }}
@@ -563,13 +685,16 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 2, duration: 0.8 }}
             >
-              <motion.div 
-                className="w-2 h-2 bg-orange-500 rounded-full"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              ></motion.div>
-              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-              <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              {[0, 1, 2, 3].map((index) => (
+                <motion.div 
+                  key={index}
+                  className={`w-2 h-2 rounded-full ${
+                    index === currentScrollIndex ? 'bg-orange-500' : 'bg-gray-300'
+                  }`}
+                  animate={index === currentScrollIndex ? { scale: [1, 1.2, 1] } : {}}
+                  transition={{ duration: 2, repeat: Infinity }}
+                ></motion.div>
+              ))}
             </motion.div>
           </motion.div>
 
