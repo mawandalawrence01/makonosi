@@ -523,15 +523,15 @@ export default function VehiclesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="tel:+254721612348"
+                href="tel:+254700004362"
                 className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Call +254 721 612 348
+                Call +254 700 004 362
               </motion.a>
               <motion.a
-                href="https://wa.me/254700043620"
+                href="https://wa.me/254721612348"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"

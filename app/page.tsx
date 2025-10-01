@@ -386,7 +386,7 @@ export default function Home() {
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <div className="flex overflow-x-auto scrollbar-hide gap-6 pb-4 snap-x snap-mandatory snap-scroll-container" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              {/* Car Deal 1 - C4 Alfa Romeo */}
+              {/* Car Deal 1 - Toyota Land Cruiser V8 */}
               <motion.div 
                 className="flex-shrink-0 w-80 md:w-96 snap-start"
                 initial={{ opacity: 0, x: -50 }}
@@ -398,8 +398,8 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
-                        src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Alfa Romeo C4" 
+                        src="/landcruiser_V8_WHITE/presentable.jpg" 
+                        alt="Toyota Land Cruiser V8" 
                         width={400}
                         height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -410,22 +410,22 @@ export default function Home() {
                       className="absolute top-4 left-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold"
                       whileHover={{ scale: 1.1 }}
                     >
-                      HOT DEAL
+                      PREMIUM
                     </motion.div>
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
-                      C4 Alfa Romeo
+                      Toyota Land Cruiser V8
                     </h3>
                     <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                      Luxury Italian engineering meets modern comfort. Perfect for city drives and special occasions.
+                      Powerful V8 engine with luxury interior. Perfect for long journeys and off-road adventures. Chauffeured only.
                     </p>
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl md:text-3xl font-black text-orange-600">
-                        KES 8,500
+                        KES 20,000
                       </div>
-                      <div className="text-sm text-gray-500 line-through">
-                        KES 12,000
+                      <div className="text-sm text-gray-500">
+                        Within city
                       </div>
                     </div>
                     <div className="text-xs md:text-sm text-gray-500 mb-4">
@@ -442,7 +442,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Car Deal 2 - GTR Nissan */}
+              {/* Car Deal 2 - Toyota Land Cruiser TX */}
               <motion.div 
                 className="flex-shrink-0 w-80 md:w-96 snap-start"
                 initial={{ opacity: 0, x: -50 }}
@@ -454,64 +454,8 @@ export default function Home() {
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
-                        src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Nissan GTR" 
-                        width={400}
-                        height={224}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                    <motion.div 
-                      className="absolute top-4 left-4 bg-gradient-to-r from-red-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-bold"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      PREMIUM
-                    </motion.div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
-                      GTR Nissan
-                    </h3>
-                    <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                      High-performance sports car with legendary speed and precision. For the ultimate driving experience.
-                    </p>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl md:text-3xl font-black text-red-600">
-                        KES 25,000
-                      </div>
-                      <div className="text-sm text-gray-500 line-through">
-                        KES 35,000
-                      </div>
-                    </div>
-                    <div className="text-xs md:text-sm text-gray-500 mb-4">
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full border border-blue-200">Limited Time</span>
-                    </div>
-                    <motion.button 
-                      className="w-full bg-gradient-to-r from-red-500 to-pink-500 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Book This Car
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Car Deal 3 - Toyota V8 */}
-              <motion.div 
-                className="flex-shrink-0 w-80 md:w-96 snap-start"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.4, duration: 0.8 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-              >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
-                  <div className="relative">
-                    <div className="w-full h-48 md:h-56 overflow-hidden">
-                      <Image 
-                        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Toyota Land Cruiser V8" 
+                        src="/Toyota_Land_cruiser_TX/presentable.jpg" 
+                        alt="Toyota Land Cruiser TX" 
                         width={400}
                         height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -527,21 +471,21 @@ export default function Home() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
-                      Toyota V8
+                      Toyota Land Cruiser TX
                     </h3>
                     <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                      Powerful V8 engine with luxury interior. Perfect for long journeys and off-road adventures.
+                      Reliable and capable SUV perfect for both city and highway driving. Self-drive or chauffeured available.
                     </p>
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl md:text-3xl font-black text-green-600">
-                        KES 18,000
+                        KES 15,000
                       </div>
-                      <div className="text-sm text-gray-500 line-through">
-                        KES 22,000
+                      <div className="text-sm text-gray-500">
+                        Within Nairobi/Mombasa
                       </div>
                     </div>
                     <div className="text-xs md:text-sm text-gray-500 mb-4">
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full border border-green-200">Popular Choice</span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full border border-blue-200">Popular Choice</span>
                     </div>
                     <motion.button 
                       className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300"
@@ -554,20 +498,20 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Car Deal 4 - BMW X5 */}
+              {/* Car Deal 3 - Toyota Ractis */}
               <motion.div 
                 className="flex-shrink-0 w-80 md:w-96 snap-start"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.6, duration: 0.8 }}
+                transition={{ delay: 1.4, duration: 0.8 }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
                 <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
                   <div className="relative">
                     <div className="w-full h-48 md:h-56 overflow-hidden">
                       <Image 
-                        src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="BMW X5" 
+                        src="/Toyota_Ractis/presentable.png" 
+                        alt="Toyota Ractis" 
                         width={400}
                         height={224}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -575,32 +519,32 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
                     <motion.div 
-                      className="absolute top-4 left-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold"
+                      className="absolute top-4 left-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold"
                       whileHover={{ scale: 1.1 }}
                     >
-                      LUXURY
+                      ECONOMY
                     </motion.div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
-                      BMW X5
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      Toyota Ractis
                     </h3>
                     <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                      Premium SUV with cutting-edge technology and superior comfort for discerning clients.
+                      Compact and fuel-efficient vehicle perfect for city driving and daily commutes. Great value for money.
                     </p>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl md:text-3xl font-black text-purple-600">
-                        KES 22,000
+                      <div className="text-2xl md:text-3xl font-black text-blue-600">
+                        KES 5,000
                       </div>
-                      <div className="text-sm text-gray-500 line-through">
-                        KES 28,000
+                      <div className="text-sm text-gray-500">
+                        Per day
                       </div>
                     </div>
                     <div className="text-xs md:text-sm text-gray-500 mb-4">
-                      <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded-full border border-purple-200">VIP Ready</span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full border border-blue-200">Fuel Efficient</span>
                     </div>
                     <motion.button 
-                      className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -610,61 +554,6 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Car Deal 5 - Mercedes E-Class */}
-              <motion.div 
-                className="flex-shrink-0 w-80 md:w-96 snap-start"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.8, duration: 0.8 }}
-                whileHover={{ scale: 1.05, y: -10 }}
-              >
-                <div className="glowing-border bg-white backdrop-blur-lg rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl border border-gray-100">
-                  <div className="relative">
-                    <div className="w-full h-48 md:h-56 overflow-hidden">
-            <Image
-                        src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Mercedes E-Class" 
-                        width={400}
-                        height={224}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                    <motion.div 
-                      className="absolute top-4 left-4 bg-gradient-to-r from-slate-500 to-gray-600 text-white px-3 py-1 rounded-full text-xs font-bold"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      EXECUTIVE
-                    </motion.div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-slate-600 transition-colors">
-                      Mercedes E-Class
-                    </h3>
-                    <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
-                      Executive sedan with refined elegance and advanced safety features for business travel.
-                    </p>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-2xl md:text-3xl font-black text-slate-600">
-                        KES 20,000
-                      </div>
-                      <div className="text-sm text-gray-500 line-through">
-                        KES 25,000
-                      </div>
-                    </div>
-                    <div className="text-xs md:text-sm text-gray-500 mb-4">
-                      <span className="bg-slate-100 text-slate-800 px-2 py-1 rounded-full border border-slate-200">Business Ready</span>
-                    </div>
-                    <motion.button 
-                      className="w-full bg-gradient-to-r from-slate-500 to-gray-600 text-white py-3 px-4 rounded-xl font-bold transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Book This Car
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
             </div>
             
             {/* Animated Scroll indicators */}
@@ -735,19 +624,19 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             <div className="space-y-6 md:space-y-8">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8">
-                Excellence in Every Journey
+                Our Foundation
               </h3>
+              <div className="bg-gradient-to-r from-blue-50 to-orange-50 p-6 rounded-2xl border border-blue-100 mb-6">
+                <p className="text-lg font-semibold text-gray-800 mb-2">
+                  At Makonosi Junior Car Hire, our capital is not money — it is <span className="text-blue-600 font-bold">faith, trust, and deliver</span>.
+                </p>
+                <p className="text-gray-700">
+                  We believe time is precious and does not reverse, so every service is designed to be punctual, reliable, and professional.
+                </p>
+              </div>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start group">
                   <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-green-500 to-green-600 rounded-lg md:rounded-xl flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-white text-xs md:text-sm font-bold">✓</span>
-                  </div>
-                  <p className="ml-3 md:ml-4 text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
-                    <span className="font-bold text-gray-900">5+ years</span> of company service excellence
-                  </p>
-                </div>
-                <div className="flex items-start group">
-                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg md:rounded-xl flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-white text-xs md:text-sm font-bold">✓</span>
                   </div>
                   <p className="ml-3 md:ml-4 text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
@@ -755,11 +644,19 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-start group">
+                  <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg md:rounded-xl flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-white text-xs md:text-sm font-bold">✓</span>
+                  </div>
+                  <p className="ml-3 md:ml-4 text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
+                    <span className="font-bold text-gray-900">Time conscious</span> - we respect your time and deliver punctual service
+                  </p>
+                </div>
+                <div className="flex items-start group">
                   <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg md:rounded-xl flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-white text-xs md:text-sm font-bold">✓</span>
                   </div>
                   <p className="ml-3 md:ml-4 text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
-                    <span className="font-bold text-gray-900">World-class standards</span> with safety and reliability guaranteed
+                    <span className="font-bold text-gray-900">Motivated staff</span> - we invest in our team to serve you better, always with a smile
                   </p>
                 </div>
                 <div className="flex items-start group">
@@ -767,7 +664,7 @@ export default function Home() {
                     <span className="text-white text-xs md:text-sm font-bold">✓</span>
                   </div>
                   <p className="ml-3 md:ml-4 text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed">
-                    <span className="font-bold text-gray-900">No hidden charges</span> - transparent pricing always
+                    <span className="font-bold text-gray-900">Transparent pricing</span> - no hidden costs, what you see is what you pay
                   </p>
                 </div>
               </div>
@@ -779,8 +676,8 @@ export default function Home() {
                 <div className="relative z-10">
                   <h4 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Our Promise</h4>
                   <p className="text-blue-100 text-sm md:text-base lg:text-lg leading-relaxed">
-                    With Makonosi Junior Car Hire, you don&apos;t just travel — you experience Kenya in comfort, 
-                    safety, and dignity, guided by 15+ years of professional chauffeur expertise.
+                    We believe in valuing people — both our clients and our team. By paying our drivers, guides, and staff fairly, 
+                    we keep them motivated to give you the very best service, always with a smile.
                   </p>
                 </div>
               </div>
@@ -1042,44 +939,76 @@ export default function Home() {
       <section id="pricing" className="py-20 bg-gray-50 subtle-modern-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Pricing</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services & Prices</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transparent pricing with no hidden charges
+              Transparent pricing with no hidden costs - what you see is what you pay
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Self-Drive Pricing */}
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Self-Drive Hire (Fuel Excluded)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🚘 Self-Drive Car Hire</h3>
+              <div className="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                <p className="text-sm text-green-800 font-medium">
+                  <strong>All our self-drive packages include:</strong>
+                </p>
+                <ul className="text-sm text-green-700 mt-2 space-y-1">
+                  <li>• Two-way fuel coverage (two and flow) depending on the car type</li>
+                  <li>• No hidden costs – what you see is what you pay</li>
+                  <li>• Free deep trips (long drives) – no extra charges for exploring Kenya</li>
+                </ul>
+              </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                  <span className="font-medium">Saloon Car</span>
-                  <span className="font-bold text-blue-600">KES 5,000/day (~USD 40)</span>
+                  <div>
+                    <span className="font-medium">Toyota Land Cruiser V8</span>
+                    <div className="text-sm text-gray-600">Within city | Outside city</div>
+                  </div>
+                  <span className="font-bold text-blue-600">KES 20,000 | KES 30,000</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                  <span className="font-medium">Compact SUV</span>
-                  <span className="font-bold text-blue-600">KES 7,500/day (~USD 60)</span>
+                  <div>
+                    <span className="font-medium">Toyota Land Cruiser TX</span>
+                    <div className="text-sm text-gray-600">Within Nairobi/Mombasa | Outside city</div>
+                  </div>
+                  <span className="font-bold text-blue-600">KES 15,000 | KES 25,000</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                  <span className="font-medium">TX Land Cruiser J150</span>
-                  <span className="font-bold text-blue-600">KES 15,000/day (~USD 120)</span>
+                  <div>
+                    <span className="font-medium">Safari Vans (7–9 seater)</span>
+                    <div className="text-sm text-gray-600">City | Outside</div>
+                  </div>
+                  <span className="font-bold text-blue-600">KES 12,000 | KES 18,000</span>
                 </div>
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                  <span className="font-medium">Luxury Sedan</span>
-                  <span className="font-bold text-blue-600">KES 20,000/day (~USD 160)</span>
+                  <div>
+                    <span className="font-medium">Mini-Bus / 25–43 Seater</span>
+                    <div className="text-sm text-gray-600">City | Outside</div>
+                  </div>
+                  <span className="font-bold text-blue-600">From KES 25,000 | From KES 35,000</span>
                 </div>
               </div>
               <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm text-blue-800">
-                  <strong>Note:</strong> Client covers fuel directly, full tank policy applies
+                  <strong>🌍 For foreign clients:</strong> Payment can be made in USD/Euro equivalent
                 </p>
               </div>
             </div>
 
             {/* Chauffeured Pricing */}
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Chauffeured Hire (All-Inclusive)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🚖 Chauffeured Car Hire</h3>
+              <div className="mb-6 p-4 bg-purple-50 rounded-lg border border-purple-200">
+                <p className="text-sm text-purple-800 font-medium mb-2">
+                  <strong>All-inclusive payments:</strong> Booking fee + balance on pickup
+                </p>
+                <ul className="text-sm text-purple-700 space-y-1">
+                  <li>• Rates depend on vehicle type and destination</li>
+                  <li>• Overtime starts after 18:00hrs</li>
+                  <li>• Allowances apply for long-distance trips</li>
+                </ul>
+              </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                   <span className="font-medium">Nairobi CBD ↔ JKIA</span>
@@ -1106,21 +1035,78 @@ export default function Home() {
                   <span className="font-bold text-blue-600">KES 14,000 / USD 110</span>
                 </div>
               </div>
+              <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                <p className="text-sm text-orange-800 font-medium mb-2">
+                  <strong>Chauffeurs come with:</strong>
+                </p>
+                <ul className="text-sm text-orange-700 space-y-1">
+                  <li>• Professional experience (15+ years)</li>
+                  <li>• Local knowledge of Kenya's roads and culture</li>
+                  <li>• Respect, confidentiality, and courtesy</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          {/* Optional Add-Ons */}
+          {/* Airport Services */}
           <div className="mt-12 bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Optional Add-Ons</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-medium">Professional Tour Guide</span>
-                <span className="font-bold text-blue-600">From KES 6,000/day (~USD 50)</span>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🛫 Airport Pickups & Drop-offs</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-blue-50 rounded-xl">
+                <h4 className="font-bold text-blue-900 mb-2">Nairobi JKIA / Wilson Airport</h4>
+                <p className="text-blue-700">Professional transfers</p>
               </div>
-              <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                <span className="font-medium">Bodyguard/Security (Interior Ministry Approved)</span>
-                <span className="font-bold text-blue-600">From KES 15,000/day (~USD 120)</span>
+              <div className="text-center p-6 bg-green-50 rounded-xl">
+                <h4 className="font-bold text-green-900 mb-2">Mombasa Moi International</h4>
+                <p className="text-green-700">Coastal transfers</p>
               </div>
+              <div className="text-center p-6 bg-purple-50 rounded-xl">
+                <h4 className="font-bold text-purple-900 mb-2">Kisumu, Eldoret, Malindi</h4>
+                <p className="text-purple-700">Regional airports</p>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-lg font-bold text-gray-800">
+                From <span className="text-blue-600">KES 5,000 – 10,000</span> depending on vehicle
+              </p>
+            </div>
+          </div>
+
+          {/* Tours & Safaris */}
+          <div className="mt-12 bg-white p-8 rounded-xl shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🏞️ Tours, Safaris & Long-Distance</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-4">Popular Routes</h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium">Mombasa – Malaba</span>
+                    <span className="font-bold text-blue-600">KES 35,000 (TX Land Cruiser)</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium">Safari Tours</span>
+                    <span className="font-bold text-green-600">Available</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg font-bold text-gray-800 mb-4">Destinations</h4>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="bg-blue-50 p-2 rounded text-center">Maasai Mara</div>
+                  <div className="bg-green-50 p-2 rounded text-center">Tsavo</div>
+                  <div className="bg-yellow-50 p-2 rounded text-center">Amboseli</div>
+                  <div className="bg-purple-50 p-2 rounded text-center">Diani</div>
+                  <div className="bg-orange-50 p-2 rounded text-center">Lamu</div>
+                  <div className="bg-pink-50 p-2 rounded text-center">Naivasha</div>
+                  <div className="bg-indigo-50 p-2 rounded text-center">Kisumu</div>
+                  <div className="bg-red-50 p-2 rounded text-center">Eldoret</div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
+              <p className="text-sm text-yellow-800">
+                <strong>Available on request:</strong> Translators, security, and tour guides
+              </p>
             </div>
           </div>
 
@@ -1132,6 +1118,72 @@ export default function Home() {
               <li>• Full payment upon pickup (before trip)</li>
               <li>• No payments after drop-off</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-orange-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
+              <span className="bg-gradient-to-r from-white via-orange-100 to-white bg-clip-text text-transparent">
+                Why Clients Choose Us
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-4">
+              International standards serving Africa, Europe, Asia & USA clients
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">✅</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Faith, Trust & Deliver</h3>
+              <p className="text-blue-100">Our core values that drive every interaction and service delivery</p>
+            </div>
+
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">⏱️</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Time Conscious</h3>
+              <p className="text-blue-100">We respect your time and deliver punctual, reliable service</p>
+            </div>
+
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">💰</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Transparent Pricing</h3>
+              <p className="text-blue-100">No hidden costs - what you see is what you pay</p>
+            </div>
+
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">⛽</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Two-Way Fuel Included</h3>
+              <p className="text-blue-100">Self-drive packages include fuel coverage for your convenience</p>
+            </div>
+
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">😊</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Motivated Staff</h3>
+              <p className="text-blue-100">We invest in our team to serve you better, always with a smile</p>
+            </div>
+
+            <div className="text-center p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-500">
+              <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl">🌍</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Nationwide Coverage</h3>
+              <p className="text-blue-100">Cars across all major cities in Kenya with international standards</p>
+            </div>
           </div>
         </div>
       </section>
@@ -1158,20 +1210,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {/* Phone */}
             <a 
-              href="tel:+254721612348" 
+              href="tel:+254700004362" 
               className="group bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-blue-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/10 cursor-pointer block"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-400/30">
                 <span className="text-2xl">📞</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center group-hover:text-blue-300 transition-colors">Phone</h3>
-              <p className="text-blue-100 text-center font-medium">+254 721 612 348</p>
+              <h3 className="text-xl font-bold mb-3 text-center group-hover:text-blue-300 transition-colors">Calls</h3>
+              <p className="text-blue-100 text-center font-medium">+254 700 004 362</p>
               <p className="text-blue-200/70 text-sm text-center mt-2 group-hover:text-blue-200 transition-colors">Tap to call</p>
             </a>
 
             {/* WhatsApp */}
             <a 
-              href="https://wa.me/254700043620?text=Hello%20Makonosi%20Junior%20Car%20Hire,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+              href="https://wa.me/254721612348?text=Hello%20Makonosi%20Junior%20Car%20Hire,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
             target="_blank"
             rel="noopener noreferrer"
               className="group bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all duration-500 transform hover:-translate-y-2 hover:bg-white/10 cursor-pointer block"
@@ -1186,7 +1238,7 @@ export default function Home() {
                 />
               </div>
               <h3 className="text-xl font-bold mb-3 text-center group-hover:text-green-300 transition-colors">WhatsApp</h3>
-              <p className="text-blue-100 text-center font-medium">+254 700 043 620</p>
+              <p className="text-blue-100 text-center font-medium">+254 721 612 348</p>
               <p className="text-green-200/70 text-sm text-center mt-2 group-hover:text-green-200 transition-colors">Tap to chat</p>
             </a>
 
@@ -1205,7 +1257,7 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-8 text-center bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">Payment Details</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                <h4 className="text-lg font-bold mb-4 text-blue-200">M-Pesa Payment</h4>
+                <h4 className="text-lg font-bold mb-4 text-blue-200">💳 Paybill</h4>
                 <div className="space-y-3 text-blue-100">
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Paybill:</span>
@@ -1218,14 +1270,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-                <h4 className="text-lg font-bold mb-4 text-blue-200">Bank Transfer</h4>
+                <h4 className="text-lg font-bold mb-4 text-blue-200">🏢 Account Name</h4>
                 <div className="space-y-3 text-blue-100">
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">Bank:</span>
-                    <span className="font-mono bg-white/10 px-3 py-1 rounded-lg">Equity Bank</span>
+                    <span className="font-medium">Account Name:</span>
+                    <span className="font-mono bg-white/10 px-3 py-1 rounded-lg">Makonosi Junior Car Hire</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="font-medium">Account:</span>
+                    <span className="font-medium">Bank:</span>
                     <span className="text-orange-300">Available on request</span>
                   </div>
                 </div>
@@ -1356,7 +1408,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <a href="tel:+254721612348" className="text-gray-300 hover:text-white transition-colors duration-300">+254 721 612 348</a>
+                    <a href="tel:+254700004362" className="text-gray-300 hover:text-white transition-colors duration-300">+254 700 004 362</a>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -1366,7 +1418,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <a href="https://wa.me/254700043620" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">+254 700 043 620</a>
+                    <a href="https://wa.me/254721612348" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">+254 721 612 348</a>
                   </div>
                 </div>
                 <div className="flex items-start">

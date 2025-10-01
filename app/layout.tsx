@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Makonosi Junior Car Hire - Premium Car Rental & Chauffeur Services in Kenya",
-  description: "Professional car hire services in Kenya with 15+ years experience. Airport transfers, VIP chauffeur service, safari tours, corporate events. TSV & PSV licensed fleet. Book now for luxury transportation.",
-  keywords: "car hire Kenya, chauffeur service Nairobi, airport transfer Kenya, VIP transport, safari vehicles, luxury car rental, corporate transport, wedding cars, tour guide Kenya, bodyguard service",
+  title: "Makonosi Junior Car Hire - International Standard Car Rental & Chauffeur Services in Kenya",
+  description: "Faith, Trust & Deliver. Professional car hire services in Kenya with 15+ years experience. Self-drive and chauffeured vehicles, airport transfers, safari tours. Transparent pricing, motivated staff, international standards. Serving Africa, Europe, Asia & USA clients.",
+  keywords: "car hire Kenya, chauffeur service Nairobi, airport transfer Kenya, VIP transport, safari vehicles, luxury car rental, corporate transport, wedding cars, tour guide Kenya, bodyguard service, international standards, faith trust deliver, transparent pricing, motivated staff",
   authors: [{ name: "Makonosi Junior Car Hire" }],
   creator: "Makonosi Junior Car Hire",
   publisher: "Makonosi Junior Car Hire",
@@ -35,21 +35,21 @@ export const metadata: Metadata = {
     locale: 'en_KE',
     url: 'https://makonosi.vercel.app',
     siteName: 'Makonosi Junior Car Hire',
-    title: 'Makonosi Junior Car Hire - Premium Car Rental & Chauffeur Services in Kenya',
-    description: 'Professional car hire services in Kenya with 15+ years experience. Airport transfers, VIP chauffeur service, safari tours, corporate events. TSV & PSV licensed fleet.',
+    title: 'Makonosi Junior Car Hire - International Standard Car Rental & Chauffeur Services in Kenya',
+    description: 'Faith, Trust & Deliver. Professional car hire services in Kenya with 15+ years experience. Self-drive and chauffeured vehicles, airport transfers, safari tours. Transparent pricing, motivated staff, international standards.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Makonosi Junior Car Hire - Luxury Transportation Services',
+        alt: 'Makonosi Junior Car Hire - International Standard Transportation Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Makonosi Junior Car Hire - Premium Car Rental & Chauffeur Services in Kenya',
-    description: 'Professional car hire services in Kenya with 15+ years experience. Airport transfers, VIP chauffeur service, safari tours, corporate events.',
+    title: 'Makonosi Junior Car Hire - International Standard Car Rental & Chauffeur Services in Kenya',
+    description: 'Faith, Trust & Deliver. Professional car hire services in Kenya with 15+ years experience. Self-drive and chauffeured vehicles, airport transfers, safari tours. Transparent pricing, motivated staff.',
     images: ['/og-image.jpg'],
   },
   alternates: {
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     'geo.placename': 'Kenya',
     'geo.position': '-1.2921;36.8219',
     'ICBM': '-1.2921, 36.8219',
-    'contact:phone_number': '+254721612348',
+    'contact:phone_number': '+254700004362',
     'contact:country_name': 'Kenya',
   },
 };
@@ -94,11 +94,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Makonosi Junior Car Hire",
-              "description": "Professional car hire services in Kenya with 15+ years experience. Airport transfers, VIP chauffeur service, safari tours, corporate events.",
+              "description": "Faith, Trust & Deliver. Professional car hire services in Kenya with 15+ years experience. Self-drive and chauffeured vehicles, airport transfers, safari tours. Transparent pricing, motivated staff, international standards.",
               "url": "https://makonosi.vercel.app/",
               "logo": "https://makonosi.vercel.app//MAKONOSIBLUEORANGE.png",
               "image": "https://makonosi.vercel.app//og-image.jpg",
-              "telephone": "+254721612348",
+              "telephone": "+254700004362",
               "email": "info@makonosi.com",
               "address": {
                 "@type": "PostalAddress",
