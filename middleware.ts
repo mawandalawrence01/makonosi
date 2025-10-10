@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Toggle the maintenance mode here
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 // Paths to allow so the down page and essential assets can load
 const allowPrefixes = [
